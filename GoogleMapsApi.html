@@ -1,0 +1,48 @@
+<html>
+<head>
+<script>
+// This example adds a red rectangle to a map.
+
+function initMap() {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 11,
+    center: {lat: 33.678, lng: -116.243},
+    mapTypeId: 'terrain'
+  });
+
+  var rectangle = new google.maps.Rectangle({
+    strokeColor: '#FF0000',
+    strokeOpacity: 0.8,
+    strokeWeight: 2,
+    fillColor: '#FF0000',
+    fillOpacity: 0.35,
+    map: map,
+    bounds: {
+	//-33.767411912998156,151.35975447059923,-33.972941215841225,150.9244212186461
+      north: -33.767411912998156,
+      south: -33.972941215841225,
+      east: 151.35975447059923,
+      west: 150.9244212186461
+    }
+  });
+}
+</script>
+<style>
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+#map {
+  height: 100%;
+}
+</style></head>
+<body>
+<div id="map"></div>
+<!-- Replace the value of the key parameter with your own API key. -->
+</body>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=XXXXXXXXXXXXXXXXXXXX&callback=initMap">
+</script>
+
+</html>
